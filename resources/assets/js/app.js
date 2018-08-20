@@ -10,6 +10,7 @@ Vue.use(VueRouter);
 Vue.use(Vuetify);
 
 import Home from './components/home.vue';
+import Login from './components/login.vue';
 
 const router = new VueRouter({
         routes: [
@@ -17,7 +18,7 @@ const router = new VueRouter({
             {
                 path: '/',
                 name: 'home',
-                component: Home
+                component: Login
             },
         ],
         mode: 'history'

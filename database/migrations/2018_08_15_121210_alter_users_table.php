@@ -15,15 +15,8 @@ class AlterUsersTable extends Migration
     {
         //
         Schema::table('users', function (Blueprint $table) {
-            $table->boolean('category');
             $table->string('user_id', 50)->unique();
-            $table->boolean('gender');
-            $table->string('country', 30);
-            $table->date('birthday');
-            $table->string('favorite_1')->nullable();
-            $table->string('favorite_2')->nullable();
-            $table->string('favorite_3')->nullable();
-            $table->string('favorite_region')->nullable();
+            $table->string('user_name', 50);
         });
     }
 
