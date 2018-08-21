@@ -12232,23 +12232,24 @@ function toComment(sourceMap) {
 //
 //
 //
+//
 
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     data: function data() {
         return {
-            dialog: true,
+            dialog: "true",
             user_id: '',
             user_pw: '',
             idrules: {
                 required: function required(value) {
-                    return !!value || '필수 항목입니다.';
+                    return !!value || '아이디를 입력하세요.';
                 }
             },
             pwrules: {
                 required: function required(value) {
-                    return !!value || '필수 항목입니다.';
+                    return !!value || '비밀번호를 입력하세요.';
                 },
                 min: function min(v) {
                     return v.length >= 8 || 'Min 8 characters';
@@ -12258,7 +12259,24 @@ function toComment(sourceMap) {
     },
 
 
-    methods: {}
+    methods: {
+        login: function login() {
+            var loginAddr = '/login';
+
+            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post(loginAddr, {
+                user_id: this.user_id,
+                user_pw: this.user_pw
+            }).then(function (response) {
+                var loginFlag = response.data.login;
+
+                if (loginFlag === true) {
+                    console.log('true');
+                } else {
+                    console.log(loginFlag);
+                }
+            }).catch(function (error) {});
+        }
+    }
 
 });
 
@@ -12297,6 +12315,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_3_vue_axios___default.a, __WEBPACK_IMPORTED_MODULE_4_axios___default.a);
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_5_vuetify___default.a);
@@ -12311,6 +12330,10 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
         path: '/',
         name: 'home',
         component: __WEBPACK_IMPORTED_MODULE_8__components_login_vue__["a" /* default */]
+    }, {
+        path: '/main',
+        name: 'mainPage',
+        component: __WEBPACK_IMPORTED_MODULE_7__components_home_vue__["a" /* default */]
     }],
     mode: 'history'
 });
@@ -36625,7 +36648,7 @@ module.exports = function (css) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_home_vue__ = __webpack_require__(14);
-/* unused harmony reexport namespace */
+/* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6ebcac14_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_home_vue__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(2);
 var disposed = false
@@ -36670,7 +36693,7 @@ if (false) {(function () {
   })
 })()}
 
-/* unused harmony default export */ var _unused_webpack_default_export = (Component.exports);
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
 
 
 /***/ }),
@@ -37167,7 +37190,7 @@ var render = function() {
                       _c(
                         "v-dialog",
                         {
-                          attrs: { persistent: "true", width: "500" },
+                          attrs: { persistent: "", width: "500" },
                           model: {
                             value: _vm.dialog,
                             callback: function($$v) {
@@ -37190,15 +37213,6 @@ var render = function() {
                               _vm._v(" "),
                               _c(
                                 "v-form",
-                                {
-                                  model: {
-                                    value: _vm.valid,
-                                    callback: function($$v) {
-                                      _vm.valid = $$v
-                                    },
-                                    expression: "valid"
-                                  }
-                                },
                                 [
                                   _c("v-text-field", {
                                     attrs: {
@@ -37246,8 +37260,20 @@ var render = function() {
                                   _vm._v(" "),
                                   _c(
                                     "v-btn",
-                                    { attrs: { flat: "", large: "" } },
-                                    [_vm._v("Login")]
+                                    {
+                                      attrs: { flat: "", large: "" },
+                                      on: { click: _vm.login }
+                                    },
+                                    [_vm._v("SIGN UP")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-btn",
+                                    {
+                                      attrs: { flat: "", large: "" },
+                                      on: { click: _vm.login }
+                                    },
+                                    [_vm._v("LOGIN")]
                                   )
                                 ],
                                 1

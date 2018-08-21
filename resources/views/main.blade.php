@@ -7,15 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>prototype test</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+    <link href="{{asset('css/sakura.css')}}" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div id="app">
 </div>
+</body>
 <script>
     window.Laravel = <?php echo json_encode([
         'csrfToken' => csrf_token(),
     ]); ?>
 </script>
+
 <script src="{{asset('js/app.js')}}"></script>
-</body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="{{asset('js/sakura.js')}}"></script>
+<script>
+    $(window).load(function () {
+        $('body').sakura();
+    });
+</script>
 </html>

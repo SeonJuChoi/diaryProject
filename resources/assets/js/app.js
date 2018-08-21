@@ -5,6 +5,7 @@ import VueAxios from 'vue-axios';
 import axios from 'axios';
 import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css';
+
 Vue.use(VueAxios, axios);
 Vue.use(VueRouter);
 Vue.use(Vuetify);
@@ -20,6 +21,11 @@ const router = new VueRouter({
                 name: 'home',
                 component: Login
             },
+            {
+                path: '/main',
+                name: 'mainPage',
+                component: Home
+            }
         ],
         mode: 'history'
     }

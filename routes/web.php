@@ -22,6 +22,11 @@ Route::group(['middleware' => 'web'], function () {
         'uses' => 'MainController@showMainPage'
     ]);
 
+    Route::post('/login', [
+        'as' => 'users.doLogin',
+        'uses' => 'UsersController@doLogin'
+    ]);
+
 });
 
 /*
