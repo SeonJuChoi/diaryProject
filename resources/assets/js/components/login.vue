@@ -1,7 +1,9 @@
 <template>
     <v-app>
+
         <v-content>
-            <v-container fluid fill-height>
+            <v-container fluid fill-height id="container">
+
                 <v-layout align-center justify-center>
                     <v-flex xs12 sm8 md4>
                         <v-dialog
@@ -37,9 +39,12 @@
                         </v-card>
                         </v-dialog>
                     </v-flex>
+
                 </v-layout>
+
             </v-container>
         </v-content>
+
     </v-app>
 </template>
 
@@ -94,5 +99,9 @@
     #login_card {
         padding: 10px;
         border-radius: 10px;
+    }
+
+    #container {
+        background-color: white;
     }
 </style>

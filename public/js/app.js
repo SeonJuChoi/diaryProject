@@ -12233,6 +12233,11 @@ function toComment(sourceMap) {
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -36886,7 +36891,7 @@ exports = module.exports = __webpack_require__(13)(false);
 
 
 // module
-exports.push([module.i, "\n#login_card {\n    padding: 10px;\n    border-radius: 10px;\n}\n", ""]);
+exports.push([module.i, "\n#login_card {\n    padding: 10px;\n    border-radius: 10px;\n}\n#container {\n    background-color: white;\n}\n", ""]);
 
 // exports
 
@@ -37177,7 +37182,7 @@ var render = function() {
         [
           _c(
             "v-container",
-            { attrs: { fluid: "", "fill-height": "" } },
+            { attrs: { fluid: "", "fill-height": "", id: "container" } },
             [
               _c(
                 "v-layout",
