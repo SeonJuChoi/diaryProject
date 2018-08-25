@@ -12313,6 +12313,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_vuetify_dist_vuetify_min_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_vuetify_dist_vuetify_min_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_home_vue__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_login_vue__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_signup__ = __webpack_require__(64);
 
 
 
@@ -12328,17 +12329,26 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_5_vuet
 
 
 
+
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
     routes: [
     // <-- main Page
     {
-        path: '/',
+        path: '/login',
         name: 'home',
         component: __WEBPACK_IMPORTED_MODULE_8__components_login_vue__["a" /* default */]
+    }, {
+        path: '/',
+        name: 'mainPage',
+        component: __WEBPACK_IMPORTED_MODULE_7__components_home_vue__["a" /* default */]
     }, {
         path: '/main',
         name: 'mainPage',
         component: __WEBPACK_IMPORTED_MODULE_7__components_home_vue__["a" /* default */]
+    }, {
+        path: '/signup',
+        name: 'mainPage',
+        component: __WEBPACK_IMPORTED_MODULE_9__components_signup__["a" /* default */]
     }],
     mode: 'history'
 });
@@ -37320,6 +37330,47 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(2);
+/* script */
+var __vue_script__ = null
+/* template */
+var __vue_render__, __vue_static_render_fns__
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+
+var Component = Object(__WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
+  __vue_script__,
+  __vue_render__,
+  __vue_static_render_fns__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/signup.vue"
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
 
 /***/ })
 /******/ ]);

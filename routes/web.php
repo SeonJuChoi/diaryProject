@@ -22,9 +22,21 @@ Route::group(['middleware' => 'web'], function () {
         'uses' => 'MainController@showMainPage'
     ]);
 
+    Route::get('/login', [
+        'as' => 'users.showLogin',
+        'uses' => 'UsersController@showLogin'
+    ]);
+
+    // <--- Login, Sign Up Page
+
     Route::post('/login', [
         'as' => 'users.doLogin',
         'uses' => 'UsersController@doLogin'
+    ]);
+
+    Route::get('/signup', [
+        'as' => 'register.showRegisterForm',
+        'uses' => 'RegisterController@showRegisterForm'
     ]);
 
 });

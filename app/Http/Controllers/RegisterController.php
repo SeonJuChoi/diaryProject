@@ -12,7 +12,13 @@ use Illuminate\Support\Facades\Hash;
 class RegisterController extends Controller
 {
     public function showRegisterForm() {
-        return view('main');
+
+        if(auth()->check())
+            return redirect('/main');
+        // show the form
+        else
+            return view('user.signup');
+
     }
 
     // <-- create Member in Users Table

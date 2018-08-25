@@ -8,6 +8,13 @@ class MainController extends Controller
 {
     //
     public function showMainPage() {
-        return view('main');
+
+        if(auth()->check())
+            return View('main');
+        // show the form
+        else
+            return redirect('/login');
+
+
     }
 }
